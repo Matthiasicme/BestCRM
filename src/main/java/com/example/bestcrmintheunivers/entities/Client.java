@@ -23,6 +23,9 @@ public class Client {
     @OneToMany(mappedBy = "client")
     private Set<Deal> deals;
 
+    @OneToMany(mappedBy = "client")
+    private Set<Employ> employees;
+
     public void setId(Long id) {
         this.id = id;
     }

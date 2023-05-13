@@ -1,4 +1,4 @@
-package main.java.com.example.bestcrmintheunivers.entities;
+package com.example.bestcrmintheunivers.entities;
 
 
 import jakarta.persistence.*;
@@ -16,6 +16,10 @@ public class Employ {
     private String email;
     private String phone;
     private Date lastContact;
+
+    @ManyToOne
+    Client client;
+
     public Long getId() {
         return id;
     }

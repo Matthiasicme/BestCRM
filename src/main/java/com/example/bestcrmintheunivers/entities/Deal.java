@@ -2,7 +2,6 @@ package com.example.bestcrmintheunivers.entities;
 
 
 import jakarta.persistence.*;
-import main.java.com.example.bestcrmintheunivers.entities.Employ;
 
 import java.sql.Date;
 
@@ -20,7 +19,7 @@ private Date startDate;
 @OneToOne
 @JoinColumn(name = "contact_point_id")
 
-private main.java.com.example.bestcrmintheunivers.entities.Employ contactPoint;
+private Employ contactPoint;
 
 @ManyToOne
 @JoinColumn(name = "client_id")
