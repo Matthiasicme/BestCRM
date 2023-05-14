@@ -53,7 +53,7 @@
     }
   </style>
 
-  <form method="post" th:action="@{/client/save}" th:object="${client}" class="client-form">
+  <form class="client-form" method="post" th:action="@{/client/save}" th:object="${client}">
     <label for="name">Name:</label>
     <input id="name" placeholder="Name" th:field="*{name}" type="text">
 
@@ -78,7 +78,34 @@
     <button type="submit">Save</button>
   </form>
 
-
-
 </body>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .box {
+    flex: 1;
+  }
+  footer {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+  }
+</style>
+
+<body>
+<div class="box">
+</div>
+<footer>
+  <p>Autor: <b>Matthias Nawrocki</b></p>
+  <p>&copy Wszelkie prawa zastrzeżone </p>
+</footer>
+</body>
+
+
 </html>

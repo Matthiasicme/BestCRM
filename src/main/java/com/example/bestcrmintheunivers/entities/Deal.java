@@ -14,7 +14,7 @@ public class Deal {
 private Double budget;
 private String state;
 private String name;
-private Date startDate;
+private Date date;
 
 @OneToOne
 @JoinColumn(name = "contact_point_id")
@@ -58,13 +58,11 @@ private Client client;
         this.name = name;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Date getDate() {
+        return date;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
+    public void setDate(Date date) { this.date = date; }
 
     public Employ getContactPoint() {
         return contactPoint;
