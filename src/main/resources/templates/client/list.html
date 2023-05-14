@@ -10,10 +10,10 @@ tu bedzie lista klientow
 <table>
     <tr>
         <th>ID</th>
-        <th>Nazwa</th>
-        <th>Adres</th>
-        <th>Telefon</th>
-        <th>email</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Email</th>
     </tr>
     <tr th:each="client: ${clients}">
         <td th:text="${client.id}"></td>

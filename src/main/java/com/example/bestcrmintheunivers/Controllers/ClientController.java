@@ -27,6 +27,12 @@ public class ClientController {
     return "client/list";
     }
 
+    @GetMapping("/add")
+    public String add(Model model){
+        model.addAttribute("client", new Client());
+        return "client/add";
+    }
+
     @GetMapping("/save")
     public String save(){
         Client client = new Client();
