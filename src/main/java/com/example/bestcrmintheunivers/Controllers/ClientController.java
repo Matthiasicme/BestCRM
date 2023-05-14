@@ -6,11 +6,9 @@ import com.example.bestcrmintheunivers.entities.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
+@RequestMapping("/client")
 @Controller
 public class ClientController {
 
@@ -33,15 +31,16 @@ public class ClientController {
         return "client/add";
     }
 
-    @GetMapping("/save")
-    public String save(){
-        Client client = new Client();
-        client.setName("Logi");
-        client.setAddress("Polska");
-        client.setPhone("gorom");
-        client.setEmail("to by nic nie dało");
+    @PostMapping("/save")
+    public String save(@ModelAttribute Client client){
         this.clientRepository.save(client);
-        return "redirect:/";
+        return "redirect:/client/";
     }
 
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id){
+        System.out.println("delete a client with id: "+ id);
+        this.clientRepository.deleteById(id);
+        return "redirect:/client/";
+    }
 }

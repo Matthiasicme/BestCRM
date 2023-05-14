@@ -14,6 +14,9 @@ tu bedzie lista klientow
         <th>Address</th>
         <th>Phone</th>
         <th>Email</th>
+        <th>Country</th>
+        <th>Business</th>
+        <th>Last Contact</th>
     </tr>
     <tr th:each="client: ${clients}">
         <td th:text="${client.id}"></td>
@@ -21,6 +24,10 @@ tu bedzie lista klientow
         <td th:text="${client.address}"></td>
         <td th:text="${client.phone}"></td>
         <td th:text="${client.email}"></td>
+        <td th:text="${client.country}"></td>
+        <td th:text="${client.business}"></td>
+        <td th:text="${client.lastContact}"></td>
+        <td><a th:href="@{/client/delete/{id}(id=${client.id})}">delete</a></td>
     </tr>
 </table>
 
