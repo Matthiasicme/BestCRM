@@ -39,8 +39,8 @@ public class ClientController {
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Long id){
-        System.out.println("delete a client with id: "+ id);
         this.clientRepository.deleteById(id);
         return "redirect:/client/";
     }
+
 }

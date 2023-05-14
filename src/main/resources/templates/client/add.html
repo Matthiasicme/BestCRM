@@ -4,20 +4,81 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
-  <h2> Create new client</h2>
+  <h1 style="color: darkblue;  text-align: center;"> Create new client</h1>
 
-  <form method="post" th:action="@{/client/save}" th:object="${client}">
-    <input id="name" placeholder="nazwa" th:field="*{name}" type="text">
-    <input id="address" placeholder="address" th:field="*{address}" type="text">
-    <input id="phone" placeholder="phone" th:field="*{phone}" type="text">
-    <input id="email" placeholder="email" th:field="*{email}" type="text">
-    <input id="country" placeholder="country" th:field="*{country}" type="text">
-    <input id="business" placeholder="business" th:field="*{business}" type="text">
-    <input id="lastContact" placeholder="lastContact" th:field="*{lastContact}" type="date" required>
+  <style>
+    .client-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+    }
+
+    label {
+      margin-top: 10px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+  <form method="post" th:action="@{/client/save}" th:object="${client}" class="client-form">
+    <label for="name">Name:</label>
+    <input id="name" placeholder="Name" th:field="*{name}" type="text">
+
+    <label for="address">Address:</label>
+    <input id="address" placeholder="Address" th:field="*{address}" type="text">
+
+    <label for="phone">Phone:</label>
+    <input id="phone" placeholder="Phone" th:field="*{phone}" type="text">
+
+    <label for="email">Email:</label>
+    <input id="email" placeholder="Email" th:field="*{email}" type="text">
+
+    <label for="country">Country:</label>
+    <input id="country" placeholder="Country" th:field="*{country}" type="text">
+
+    <label for="business">Business:</label>
+    <input id="business" placeholder="Business" th:field="*{business}" type="text">
+
+    <label for="lastContact">Last Contact:</label>
+    <input id="lastContact" placeholder="Last Contact" th:field="*{lastContact}" type="date" required>
+
     <button type="submit">Save</button>
   </form>
+
+
 
 </body>
 </html>
