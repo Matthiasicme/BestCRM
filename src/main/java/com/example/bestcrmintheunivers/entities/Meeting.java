@@ -3,7 +3,7 @@ package com.example.bestcrmintheunivers.entities;
 
 import jakarta.persistence.*;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Entity
 public class Meeting {
@@ -15,7 +15,7 @@ public class Meeting {
     private String state;
     private String location;
     private String title;
-    private Date hour;
+    private LocalDateTime hour;
 
     @ManyToOne
     @JoinColumn(name = "client_id")
@@ -62,11 +62,11 @@ public class Meeting {
         this.title = title;
     }
 
-    public Date getHour() {
+    public LocalDateTime getHour() {
         return hour;
     }
 
-    public void setHour(Date hour) {
+    public void setHour(LocalDateTime hour) {
         this.hour = hour;
     }
 
