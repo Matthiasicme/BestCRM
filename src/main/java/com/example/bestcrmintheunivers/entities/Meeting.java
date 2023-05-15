@@ -15,7 +15,6 @@ public class Meeting {
     private String state;
     private String location;
     private String title;
-    private Date date;
     private Date hour;
 
     @ManyToOne
@@ -61,14 +60,6 @@ public class Meeting {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 
     public Date getHour() {
