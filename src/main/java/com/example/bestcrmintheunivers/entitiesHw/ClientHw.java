@@ -20,10 +20,10 @@ public class ClientHw {
     private Date lastContact;
 
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "clientHw")
     private Set<DealHw> dealsHw;
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "clientHw")
     private Set<EmployHw> employeesHw;
 
     public void setId(Long id) {
