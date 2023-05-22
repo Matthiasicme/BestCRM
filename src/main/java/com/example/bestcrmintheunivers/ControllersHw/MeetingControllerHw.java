@@ -22,7 +22,7 @@ public class MeetingControllerHw {
 
     @GetMapping("/")
     public String list(Model model){
-        model.addAttribute("meetingsHw", this.meetingRepository.findAll());
+        model.addAttribute("meetings", this.meetingRepository.findAll());
         return "meetingHw/list";
     }
 

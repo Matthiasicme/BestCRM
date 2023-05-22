@@ -22,7 +22,7 @@ public class DealControllerHw {
 
     @GetMapping("/")
     public String list(Model model){
-        model.addAttribute("dealsHw", this.dealRepository.findAll());
+        model.addAttribute("deals", this.dealRepository.findAll());
         return "dealHw/list";
     }
 

@@ -22,7 +22,7 @@ public class ClientControllerHw {
 
     @GetMapping("/")
     public String list(Model model){
-        model.addAttribute("clientsHw", this.clientRepository.findAll());
+        model.addAttribute("clients", this.clientRepository.findAll());
         return "clientHw/list";
     }
 

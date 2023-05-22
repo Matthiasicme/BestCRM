@@ -22,7 +22,7 @@ public class NoteControllerHw {
 
     @GetMapping("/")
     public String list(Model model){
-        model.addAttribute("notesHw", this.noteRepository.findAll());
+        model.addAttribute("notes", this.noteRepository.findAll());
         return "noteHw/list";
     }
 

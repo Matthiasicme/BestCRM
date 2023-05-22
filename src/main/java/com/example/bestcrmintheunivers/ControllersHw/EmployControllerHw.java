@@ -22,7 +22,7 @@ public class EmployControllerHw {
 
     @GetMapping("/")
     public String list(Model model){
-        model.addAttribute("employeesHw", this.employRepository.findAll());
+        model.addAttribute("employees", this.employRepository.findAll());
         return "employHw/list";
     }
 
