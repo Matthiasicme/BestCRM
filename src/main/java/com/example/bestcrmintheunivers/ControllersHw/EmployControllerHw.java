@@ -28,7 +28,7 @@ public class EmployControllerHw {
 
     @GetMapping("/add")
     public String add(Model model){
-        model.addAttribute("employHw", new EmployHw());
+        model.addAttribute("employ", new Employ());
         return "employHw/add";
     }
 

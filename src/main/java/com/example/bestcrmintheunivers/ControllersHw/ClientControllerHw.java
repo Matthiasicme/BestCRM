@@ -28,7 +28,7 @@ public class ClientControllerHw {
 
     @GetMapping("/add")
     public String add(Model model){
-        model.addAttribute("clientHw", new ClientHw());
+        model.addAttribute("client", new Client());
         return "clientHw/add";
     }
 

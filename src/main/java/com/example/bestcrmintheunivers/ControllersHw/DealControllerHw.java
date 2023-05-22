@@ -28,7 +28,7 @@ public class DealControllerHw {
 
     @GetMapping("/add")
     public String add(Model model){
-        model.addAttribute("dealHw", new DealHw());
+        model.addAttribute("deal", new Deal());
         return "dealHw/add";
     }
 

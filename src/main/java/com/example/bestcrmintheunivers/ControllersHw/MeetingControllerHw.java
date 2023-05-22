@@ -28,7 +28,7 @@ public class MeetingControllerHw {
 
     @GetMapping("/add")
     public String add(Model model){
-        model.addAttribute("meetingHw", new MeetingHw());
+        model.addAttribute("meeting", new Meeting());
         return "meetingHw/add";
     }
 

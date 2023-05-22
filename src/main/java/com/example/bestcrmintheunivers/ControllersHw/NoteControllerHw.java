@@ -28,7 +28,7 @@ public class NoteControllerHw {
 
     @GetMapping("/add")
     public String add(Model model){
-        model.addAttribute("noteHw", new NoteHw());
+        model.addAttribute("note", new Note());
         return "noteHw/add";
     }
 
