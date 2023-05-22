@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Matthias ent.</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Menu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/clientHw/">Papa inoa o nā mea kūʻai aku</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/clientHw/add">Hoʻohui i ka mea kūʻai aku</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/dealHw/">Papa inoa o na Kuikahi</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/dealHw/add">Pākuʻi Kūʻai</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/employHw/">Papa inoa o na limahana</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/employHw/add">Hoʻohui i ka limahana</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/meetingHw/">Papa inoa o na halawai</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/meetingHw/add">Pākuʻi Hui</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/noteHw/">Papa inoa o nā memo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/noteHw/add">Hoʻohui memo</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<h1 style="color: darkblue;  text-align: center;">Papa inoa o nā memo</h1>
+
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  th {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  a.delete-link {
+    color: #bd0000;
+    text-decoration: none;
+  }
+</style>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Poʻo inoa</th>
+    <th>Mokuʻāina</th>
+    <th>Lā</th>
+    <th>Maʻiʻo</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="note: ${notes}">
+    <td th:text="${note.id}"></td>
+    <td th:text="${note.title}"></td>
+    <td th:text="${note.state}"></td>
+    <td th:text="${note.dateTime}"></td>
+    <td th:text="${note.content}"></td>
+    <td><a th:href="@{/note/delete/{id}(id=${note.id})}" style="color: #bd0000;">DELETE</a></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .box {
+    flex: 1;
+  }
+  footer {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+  }
+</style>
+
+<body>
+<div class="box">
+</div>
+<footer>
+  <p>Autor: <b>Matthias Nawrocki</b></p>
+  <p>&copy Ua mālama ʻia nā kuleana āpau </p>
+</footer>
+</body>
+
+
+</html>
